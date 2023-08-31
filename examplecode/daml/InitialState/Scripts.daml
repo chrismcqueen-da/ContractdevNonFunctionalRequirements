@@ -25,6 +25,12 @@ initParties = do
 
   return (TestParties with ..)
 
+
+
+
+
+
+
 initUsers : TestParties -> Script TestUsers
 initUsers TestParties{..} = do
   let 
@@ -41,6 +47,22 @@ initUsers TestParties{..} = do
   uBob <- makeUser "bob" pBob []
 
   return (TestUsers with ..)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 initCash : Script (TestParties, TestUsers)
 initCash = do
