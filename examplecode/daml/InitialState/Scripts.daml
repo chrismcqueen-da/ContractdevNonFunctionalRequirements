@@ -88,6 +88,15 @@ initCash = do
         position
         newOwner = pBob
 
+
+
+
+
+
+
+
+
+
   -- Alice accepts her transfer proposals
   aliceProposals <- query @TransferProposal pAlice
   forA_ aliceProposals (\p -> submit pAlice do 
