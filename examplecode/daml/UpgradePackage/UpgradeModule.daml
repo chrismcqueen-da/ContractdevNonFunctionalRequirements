@@ -21,6 +21,16 @@ template UpgradeProposal
         create Upgrader with ..
 
 
+
+
+
+
+
+
+
+
+
+
 template Upgrader
   with
       bank : Party
