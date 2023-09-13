@@ -22,7 +22,16 @@ template Position
                 create TransferProposal with 
                     position = this
                     newOwner
-                    
+
+
+
+
+
+
+
+
+
+
         choice Transfer : ContractId Position
             with
                 newOwner : Party
@@ -31,8 +40,6 @@ template Position
                 create this with 
                     owner = newOwner
                     obs = []
-
-
 
 template TransferProposal
   with
