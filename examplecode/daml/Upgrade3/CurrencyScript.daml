@@ -29,6 +29,10 @@ testUpgrade = do
   [(pb, _)] <- query @UpgradeProposal pBob
   submitUser uBob do exerciseCmd pb AcceptUpgrade
 
+
+
+
+
   -- Get all upgraders 
   upgraders <- query @Upgrader pBank
 
