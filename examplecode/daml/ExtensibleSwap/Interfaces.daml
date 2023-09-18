@@ -29,6 +29,9 @@ interface IAsset where
     do 
       create $ setOwner (setObs this []) newOwner
 
+
+
+
   choice SetObservers: ContractId IAsset 
     with 
       newObs: [Party]
