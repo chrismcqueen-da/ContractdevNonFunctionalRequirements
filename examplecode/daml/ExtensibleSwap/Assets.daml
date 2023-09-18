@@ -46,6 +46,23 @@ template CashTransferProposal
         newOwner = newOwner 
         vasset = view $ toInterface @IAsset cash 
       asset = toInterface @IAsset cash
+    
+-----------------------------------
+
+template BondTransferProposal 
+  with 
+    newOwner: Party 
+    bond: Bond 
+
+  where 
+    signatory (signatory bond)
+    observer newOwner 
+
+    interface instance ITransferProposal for BondTransferProposal where 
+      view = VTransferProposal with 
+        newOwner = newOwner 
+        vasset = view $ toInterface @IAsset bond 
+      asset = toInterface @IAsset bond
 
 
 ---------------
@@ -67,20 +84,3 @@ template Bond
       setObs newObs = toInterface (this with obs = newObs)
       setQuantity newQuantity = toInterface (this with quantity = newQuantity)
       transferTo newOwner = toInterface $ BondTransferProposal with bond = this; ..
-    
------------------------------------
-
-template BondTransferProposal 
-  with 
-    newOwner: Party 
-    bond: Bond 
-
-  where 
-    signatory (signatory bond)
-    observer newOwner 
-
-    interface instance ITransferProposal for BondTransferProposal where 
-      view = VTransferProposal with 
-        newOwner = newOwner 
-        vasset = view $ toInterface @IAsset bond 
-      asset = toInterface @IAsset bond
