@@ -20,7 +20,16 @@ template Cash
       setObs newObs = toInterface (this with obs = newObs)
       setQuantity newQuantity = toInterface (this with quantity = newQuantity)
       transferTo newOwner = toInterface $ CashTransferProposal with cash = this; ..
-     
+
+
+
+
+
+
+
+
+
+
 -----------------------------------
 
 template CashTransferProposal 
